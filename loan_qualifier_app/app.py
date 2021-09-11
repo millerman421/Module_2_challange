@@ -9,6 +9,7 @@ Example:
 import sys
 import fire
 import questionary
+import csv
 from pathlib import Path
 
 from qualifier.utils.fileio import load_csv
@@ -101,6 +102,16 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
 
     return bank_data_filtered
 
+def save_csv(qualifying_loans,save_file_path):
+    """Function receives the list of qualifying loans data and the the path to save the list of qualifying loans as qualifying_loans_data.csv.
+    It writes the output (headers and data) using DictWriter. This function is called by the save_qualifying_loans function.
+    """
+    with open(save_file_path + "\qualifying_loans_data.csv",'w+') as new_file:
+        headers = []
+        csv_writer = csv.DictWriter(new_file,fieldnames=headers, delimiter=",")
+        csv_writer.writeheader()
+        csv_writer.writerows(qualifying_loans)
+        new_file.close()
 
 def save_qualifying_loans(qualifying_loans):
     """Saves the qualifying loans to a CSV file.
@@ -109,8 +120,16 @@ def save_qualifying_loans(qualifying_loans):
         qualifying_loans (list of lists): The qualifying bank loans.
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
-    # YOUR CODE HERE!
+    """
 
+    
+    """
+    save_as_file_answer = questionary.confirm("Would you like to save your qualifying loans?:").ask()
+    
+    if  save_as_file_answer == True:
+        save_file_response = questionary.text("Please provide an output file path:").ask()
+        save_file_path = Path(save_file_response)
+        save_csv(qualifying_loans,save_file_path)
 
 def run():
     """The main function for running the script."""
