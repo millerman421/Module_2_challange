@@ -1,6 +1,6 @@
 # Loan Qualifier Application [Module assignment for FinTech Bootcamp]
 
-This is a python command-line interface application that allows users to see qualifying loans from lenders quickly and easily. The application works by taking in a `daily_rate_sheet` of loan criteria from various loan providers, asking the user a number of questions to evaluate their loan eligibility, and then returning to them a list of qualifying loans which is provided saved as `results` or printed to screen.
+This is a python command-line interface application that allows users to see qualifying loans from lenders quickly and easily. The application works by taking in a `daily_rate_sheet` of loan criteria from various loan providers, asking the user a number of questions to evaluate their loan eligibility, and then returning to them a list of qualifying loans which is saved as `results` to a valid directory or printed to screen.
 
 ---
 
