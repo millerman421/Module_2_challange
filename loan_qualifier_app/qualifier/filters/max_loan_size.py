@@ -12,7 +12,10 @@ def filter_max_loan_size(loan_amount, bank_list):
 
     Args:
         loan_amount (int): The requested loan amount.
-        bank_list (list of lists): The available bank loans.
+        bank_list.get("Max Loan Amount"): The available bank loans.
+        This code improves upon the original solution because in real-life the
+        rates file could add additional columns which changes the position of the Max Loan Amount. 
+        Additionally, the name of the header is easier to follow in the code instead of an index position.
 
     Returns:
         A list of qualifying bank loans.

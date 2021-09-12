@@ -7,7 +7,7 @@ Example:
     $ python app.py
 """
 import sys
-import os
+import os #added to use the isdir() function to ensure the user picks a valid directory path to save the results.csv file
 import fire
 import questionary
 import csv
@@ -104,14 +104,17 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
     return bank_data_filtered
 
 def save_csv(qualifying_loans,save_file_path):
-    """Function receives the list of qualifying loans data and the the path to save the list of qualifying loans as qualifying_loans_data.csv.
+    """Function receives the list of qualifying loans data and the the path to save the list of qualifying loans as results.csv.
     It writes the output (headers and data) using DictWriter. This function is called by the save_qualifying_loans function.
     """
     
+    #finds the headers in the list of dictionaries and breaks from the loop because only the first iteration is needed
     for k in qualifying_loans:
         headers = k.keys()
         break
     
+    #Uses the args received from the qualifying loans function (save_file_path and qualifying_loans) to write the results 
+    # of the qualifying loans and save it to the specified directory
     with open(save_file_path,'w+') as new_file:
         csv_writer = csv.DictWriter(new_file,fieldnames=headers, delimiter=",")
         csv_writer.writeheader()
@@ -124,11 +127,19 @@ def save_qualifying_loans(qualifying_loans):
     """Saves the qualifying loans to a CSV file.
 
     Args:
-        qualifying_loans (list of lists): The qualifying bank loans.
+        qualifying_loans (list of dictionaries): The qualifying bank loans.
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
     """
-
+    This usability dialog works in this order:
+    1) If the count of qualifying loans is not 0 the borrower is asked if they want to save their loans.
+        Else: the system exits and let's the borrower know they do not meet the loan qualifications
+    2) If the borrower answered they want to save their loans they are prompted for a file path so the result
+    results are saved by a system generated file named results.csv. If a valid system directory/file path is provided the save_csv function is called and
+    the results are saved to the valid directory as results.csv file. 
+        A while loop is triggered until the borrower provides a valid directory. The funcion isdir() is True while not a valid directory and will conitnue. 
+        The loop exits as soon as valid directory is provided resulting in a False.  
+    Else: The results get printed to screen for the borrower to view. 
     
     """
     if len(qualifying_loans) != 0:

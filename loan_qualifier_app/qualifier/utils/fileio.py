@@ -14,14 +14,14 @@ def load_csv(csvpath):
         csvpath (Path): The csv file path.
 
     Returns:
-        A list of lists that contains the rows of data from the CSV file.
+        A list of dictionaries that contains the rows of data from the CSV file.
 
     """
     with open(csvpath, "r") as csvfile:
         data = []
         csvreader = csv.DictReader(csvfile, delimiter=",")
 
-        # Skip the CSV Header
+        # Do not need to skip the header by using DictReader
         #next(csvreader)
 
         # Read the CSV data

@@ -13,7 +13,9 @@ def filter_loan_to_value(loan_to_value_ratio, bank_list):
     Args:
         loan_to_value_ratio (float): The applicant's loan to value ratio.
         bank_list (list of lists): The available bank loans.
-
+        This code improves upon the original solution because in real-life the
+        rates file could add additional columns which changes the position of the Max LTV. 
+        Additionally, the name of the header is easier to follow in the code instead of an index position.
     Returns:
         A list of qualifying bank loans.
     """
