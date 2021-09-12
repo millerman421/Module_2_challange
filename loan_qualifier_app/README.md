@@ -71,7 +71,8 @@ Prompt_08: Borrower provided a valid directory after being asked to try again
 ![Loan Qualifier Prompts_08](Images/08_Save_Results_Unsuccessful_try_again_successful.PNG)
 
 * It is important the borrower furnish accurate information so that the filters provide an optimal list of banks that the borrower may qualify to submit a loan application.
-* The five questions are as follows:
+##
+The five questions are as follows:
 
 * What's your credit score? 
 * What's your current amount of monthly debt?
@@ -134,9 +135,10 @@ debit_to_income_approval_list = []
 ```
 
 ## Contributors
+Trilogy and FinTech Bootcamp partners
 
 Brian Miller
-* ![Contact](mailto:bam4217@yahoo.com)
+[Contact](mailto:bam4217@yahoo.com)
 
 ---
 
