@@ -12,13 +12,13 @@ This project leverages python 3.8.8 with the following packages:
 
 * [questionary](https://github.com/tmbo/questionary) - For interactive user prompts and dialogs
 
-* [sys](https://docs.python.org/3.8/library/sys.html) - Information about this library.
+* [sys](https://docs.python.org/3.8/library/sys.html) - For system commands. Follow link for more information about this library.
 
-* [os](https://docs.python.org/3.8/library/os.html) - Information about this library.
+* [os](https://docs.python.org/3.8/library/os.html) - For os commands. Follow link for more information about this library.
 
-* [csv](https://docs.python.org/3.8/library/csv.html) - Information about this library.
+* [csv](https://docs.python.org/3.8/library/csv.html) - For reading and writing csv files. Follow link for more information about this library.
 
-* [pathlib](https://docs.python.org/3.8/library/pathlib.html) - Information about this library.
+* [pathlib](https://docs.python.org/3.8/library/pathlib.html) - For navigating file system paths. Follow link for more information about this library.
 ---
 
 ## Installation Guide
