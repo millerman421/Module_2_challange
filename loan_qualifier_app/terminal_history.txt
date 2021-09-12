@@ -1,0 +1,50 @@
+  496  jupyter lab
+  497  cd C:\Users\bmill\OneDrive\Desktop\Examples\Python_Apppy
+  498  python
+  499  cd C:\Users\bmill\OneDrive\Desktop\Examples\Python_App\
+  500  cd C:\Users\bmill\OneDrive\Desktop\Examples\Python_Apppython --version
+  501  cd GIT/
+  502  ls
+  503  cd module2_challange
+  504  cd Module2_challenge/
+  505  git clone https://github.com/millerman421/Module_2_challange.git
+  506  git status
+  507  ls
+  508  cd Module_2_challange/
+  509  git status
+  510  git add ..
+  511  git add .
+  512  git status
+  513  git commit -m "Uploading initial code files for this project"
+  514  git status
+  515  git push
+  516  git status
+  517  git add .
+  518  git status
+  519  code .
+  520  python app.py
+  521  conda activate dev
+  522  python app.py
+  523  cd GIT/
+  524  cd GIT\
+  525  ls
+  526  cd loan_qualifier_app/
+  527  python app.py
+  528  python app.py
+  529  git status
+  530  git add .
+  531  git status
+  532  git commit -m "pushing updates to GitHub repo"
+  533  git push
+  534  git status
+  535  git status
+  536  git add
+  537  git add .
+  538  git commit -m "Improved program features"
+  539  git push
+  540  git status
+  541  git add .
+  542  git commit -m "updated code comments and documentation"
+  543  get push
+  544  git push
+  545  history 50 > terminal_history.txt

@@ -1,33 +1,77 @@
-# Project Title
+# Loan Qualifier Application [Module assignment for FinTech Bootcamp]
 
-Just after the title, introduce your project by describing attractively what the project is about and what is the main problem that inspires you to create this project or what is the main contribution for the potential user of your project.
+This is a python command-line interface application that allows users to see qualifying loans from lenders quickly and easily. The application works by taking in a `daily_rate_sheet` of loan criteria from various loan providers, asking the user a number of questions to evaluate their loan eligibility, and then returning to them a list of qualifying loans which is provided saved as `results` or printed to screen.
 
 ---
 
 ## Technologies
 
-Describe the technologies required to use your project such as programming languages, libraries, frameworks, and operating systems. Be sure to include the specific versions of any critical dependencies that you have used in the stable version of your project.
+This project leverages python 3.8.8 with the following packages:
 
+* [fire](https://github.com/google/python-fire) - For the command line interface, help page, and entrypoint.
+
+* [questionary](https://github.com/tmbo/questionary) - For interactive user prompts and dialogs
+
+* [sys](https://docs.python.org/3.8/library/sys.html) - Information about this library.
+
+* [os](https://docs.python.org/3.8/library/os.html) - Information about this library.
+
+* [csv](https://docs.python.org/3.8/library/csv.html) - Information about this library.
+
+* [pathlib](https://docs.python.org/3.8/library/pathlib.html) - Information about this library.
 ---
 
 ## Installation Guide
 
-In this section, you should include detailed installation notes containing code blocks and screenshots.
+```python
+  pip install fire
+  pip install questionary
+
+  The other libraries should be part of the standard Python installation. 
+```
+
+---
 
 ---
 
 ## Usage
 
-This section should include screenshots, code blocks, or animations explaining how to use your project.
+To use the loan qualifier application simply clone the repository and run the **app.py** with:
 
+```python
+python app.py
+```
+
+Upon launching the loan qualifier application you will be greeted with the following prompts.
+
+![Loan Qualifier Prompts_01](Images/01_Provide_File_Path.PNG)
+![Loan Qualifier Prompts_02](Images/02_Does_not_qualify.PNG)
+![Loan Qualifier Prompts_03](Images/03_Bad_rate_sheet_path.PNG)
+![Loan Qualifier Prompts_04](Images/04_Save_Results.PNG)
+![Loan Qualifier Prompts_05](Images/05_Save_Results_Successful.PNG)
+![Loan Qualifier Prompts_06](Images/06_Print_Results_Successful.PNG)
+![Loan Qualifier Prompts_07](Images/07_Save_Results_Unsuccessful_try_again.PNG)
+![Loan Qualifier Prompts_08](Images/08_Save_Results_Unsuccessful_try_again_successful.PNG)
+
+* It is important the borrower furnish accurate information so that the filters provide an optimal list of banks that the borrower may qualify to submit a loan application.
+* The five questions are as follows:
+
+? What's your credit score? 
+? What's your current amount of monthly debt?
+? What's your total monthly income? 
+? What's your desired loan amount?
+? What's your home value? 
+
+*The output will follow the prompts already presented above. 
 ---
 
 ## Contributors
 
-In this section, list all the people who contribute to this project. You might want recruiters or potential collaborators to reach you, so include your contact email and, optionally, your LinkedIn or Twitter profile.
+Brian Miller
+* ![Contact](mailto:bam4217@yahoo.com)
 
 ---
 
 ## License
 
-When you share a project on a repository, especially a public one, it's important to choose the right license to specify what others can and can't with your source code and files. Use this section to include the license you want to use.
+No license required.
