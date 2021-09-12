@@ -1,15 +1,3 @@
-  505  git clone https://github.com/millerman421/Module_2_challange.git
-  506  git status
-  507  ls
-  508  cd Module_2_challange/
-  509  git status
-  510  git add ..
-  511  git add .
-  512  git status
-  513  git commit -m "Uploading initial code files for this project"
-  514  git status
-  515  git push
-  516  git status
   517  git add .
   518  git status
   519  code .
@@ -48,3 +36,15 @@
   552  git push
   553  history > 50 terminal_history.txt
   554  history 50 >terminal_history.txt
+  555  git status
+  556  git add .
+  557  git commit -m "updated terminal history"
+  558  get push
+  559  git push
+  560  git status
+  561  git add .
+  562  git commit -m "Additional updates to README.md"
+  563  git push
+  564  git status
+  565  git add .
+  566  history 50 > terminal_history.txt
