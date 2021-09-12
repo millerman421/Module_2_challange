@@ -7,6 +7,7 @@ Example:
     $ python app.py
 """
 import sys
+import os
 import fire
 import questionary
 import csv
@@ -106,12 +107,18 @@ def save_csv(qualifying_loans,save_file_path):
     """Function receives the list of qualifying loans data and the the path to save the list of qualifying loans as qualifying_loans_data.csv.
     It writes the output (headers and data) using DictWriter. This function is called by the save_qualifying_loans function.
     """
-    with open(save_file_path + "\qualifying_loans_data.csv",'w+') as new_file:
-        headers = []
+    
+    for k in qualifying_loans:
+        headers = k.keys()
+        break
+    
+    with open(save_file_path,'w+') as new_file:
         csv_writer = csv.DictWriter(new_file,fieldnames=headers, delimiter=",")
         csv_writer.writeheader()
         csv_writer.writerows(qualifying_loans)
         new_file.close()
+
+    print(f"File was saved successfully to: {save_file_path}")
 
 def save_qualifying_loans(qualifying_loans):
     """Saves the qualifying loans to a CSV file.
@@ -124,13 +131,22 @@ def save_qualifying_loans(qualifying_loans):
 
     
     """
-    save_as_file_answer = questionary.confirm("Would you like to save your qualifying loans?:").ask()
+    if len(qualifying_loans) != 0:
+        save_as_file_answer = questionary.confirm("Would you like to save your qualifying loans?:").ask()
+    else:
+        sys.exit("Because you have do not meet qualifications we cannot offer you a loan option at this time.")
     
     if  save_as_file_answer == True:
-        save_file_response = questionary.text("Please provide an output file path:").ask()
-        save_file_path = Path(save_file_response)
+        save_file_response = questionary.text("Please provide an output file path for the results.csv file:").ask()
+        while not os.path.isdir(save_file_response):
+            print("Oops! That file path does not exist. So let's try that again")
+            save_file_response = questionary.text("Please provide an output file path again:").ask()
+        save_file_response_results = save_file_response + "results.csv"
+        save_file_path = Path(save_file_response_results)
         save_csv(qualifying_loans,save_file_path)
-
+    else:
+        print("Here are your results:",qualifying_loans)
+        sys.exit("Thank you!")
 def run():
     """The main function for running the script."""
 
